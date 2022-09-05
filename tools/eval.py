@@ -174,6 +174,8 @@ def main():
         place = paddle.set_device('npu')
     elif cfg.use_xpu:
         place = paddle.set_device('xpu')
+    elif cfg.use_mlu:
+        place = paddle.set_device('mlu')
     else:
         place = paddle.set_device('cpu')
 

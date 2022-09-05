@@ -461,7 +461,7 @@ class Trainer(object):
                             DataParallel) and use_fused_allreduce_gradients:
                         with model.no_sync():
                             with paddle.amp.auto_cast(
-                                    enable=self.cfg.use_gpu,
+                                    enable=(self.cfg.use_gpu or self.cfg.use_mlu),
                                     custom_white_list=self.custom_white_list,
                                     custom_black_list=self.custom_black_list,
                                     level=self.amp_level):
